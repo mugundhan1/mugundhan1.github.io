@@ -1,11 +1,10 @@
 h1 {
   color: black;
   font-family: Palatino Linotype; 
-  font-size: 14px; 
+  font-size: 100px; 
   font-style: normal; 
   font-variant: normal; 
-  font-weight: 700; 
-  line-height: 14px; 
+  font-weight: 700;  
   text-align: center;
 }
 
