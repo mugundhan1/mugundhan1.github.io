@@ -1,12 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> MUGUNDHAN V. </title>
-   <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mugundhan V.</title>
+    <style>
+        body {
+            font-family: Palatino Linotype, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2rem 2rem 4rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+	    transition: all 0.3s ease;
+        }
+        header.small {
+            padding: 1rem;
+            background-color: white;
+            color: #4CAF50;
+        }
+        header.small img {
+            width: 50px;
+            height: 50px;
+        }
+        header.small h1 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            color: #4CAF50;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .sidebar a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .sidebar a:hover {
+            color: #4CAF50;
+        }
+        main {
+            margin-left: 220px;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        section {
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: white;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        nav a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            transition: all 0.3s ease;
+        }
+        .container.hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .thumbnails a {
+            display: block;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: none;
+        }
+        .thumbnails img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: transparent;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f4;
+            margin-top: 1rem;
+        }
+    </style>
+    <script>
+        document.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const aboutSection = document.querySelector('#about');
+            const projectsSection = document.querySelector('#projects');
+
+            if (window.scrollY > 50) {
+                header.classList.add('small');
+                aboutSection.classList.add('hidden');
+                projectsSection.style.marginTop = "0";
+            } else {
+                header.classList.remove('small');
+                aboutSection.classList.remove('hidden');
+                projectsSection.style.marginTop = "2rem";
+            }
+        });
+    </script>
 </head>
 <body>
-    <section class="header">
-    </section>
+    <aside class="sidebar">
+        <h2>Contact Me</h2>
+        <a href="https://github.com/mugundhan1" target="_blank">GitHub</a>
+        <a href="https://git.chalmers.se/mugvij" target="_blank">GitLab</a>
+        <a href="https://www.linkedin.com/in/mugundhan-vijayaraghavan-5301841b/" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.co.in/citations?user=4Bj2FH8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="mailto:mugundhan.vijayaraghavan@chalmers.se">Email</a>
+        <a href="https://maps.app.goo.gl/rsmua1JMXZsLomnc9" target="_blank">Find Me!</a>
+    </aside>
+    <main>
+        <header>
+            <img src="images/IMG_20230208_083105.jpg" alt="VM Photo">
+            <h1 style='font-size: 40px'>Mugundhan V.</h1>
+            <p style='font-size: 24px'>Senior Research Engineer - Onsala Space Observatory</p>
+        </header>
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p style="text-align: justify; font-size: 20px">I'm a Senior Research Engineer at the Onsala Space Observatory, Sweden's national infrastructure for radio astronomy. Here, I work on developing new instruments for the observatory. In addition to this, I develop strategies to electromagnetically characterize existing telescopes in the observatory. Along with collaborators, I use the Swedish LOFAR station, and the GMRT in India study the heliosphere using pulsars to probe them. Prior to arriving in Sweden, I was the HIRAX Post-Doc at University of KwaZulu-Natal, where I worked on the Integration, monitoring and control of a new telescope being built to study the early universe. I have also worked on developing instrumentation for quantum optics at Raman Research Institute. 
+        
+        I hold a PhD in astronomical instrumentation from the Indian Institute of Astrophysics. I'm interested in developing end-to-end purpose built instrumentation (from antennas to bits), electromagnetics, transients and their radio signatures.
+            </p>
+        </section>
+        <section id="research" class="container">
+            <h2>Research</h2>
+            <ul>
+                <li style="text-align: justify; font-size: 20px" ><strong>Digital Receivers for Transients and VLBI Observations</strong> This is an ongoing project, where I work with new Xilinx RFSoC FPGAs to develop digital hardware and firmware systems for VLBI observations, and searching for a new class of transients, Fast Radio Bursts, using the telescopes in the observatory. I'm also looking into the use of high speed sample and hold ICs as digital front-end for ADCs to increase their analog bandwidth.</li>
+                <li style="text-align: justify; font-size: 20px"><strong>Mapping the beam and the aperture for the Onsala Twin Telescopes</strong> I work on using a technique called microwave holography to map the beam and the aperture of the newly built Onsala Twin Telescopes. This work is important as it helps us understand the telescopes that will be used for the next generation Geodetic VLBI observations. Geo VLBI observations help us accurately locate where we are.</li>
+                <li style="text-align: justify; font-size: 20px"><strong>Space weather observations using Pulsars</strong> My collaborators and I are using the Giant Meterwave Radio Telescope, and the Swedish LOFAR station to observe pulsars close to the ecliptic to use the variations (in time and polarization) of their signals to estimate the electron density and magnetic field changes in the heliosphere. 
+            </ul>
+            <p style="text-align: justify; font-size: 20px">I may have small projects/internships suitable for Bachelors and Masters students. Please feel free to write to in case you would be interested.
+            </p>
+        </section>
+        <div class="thumbnails">
+            <a href="https://www.chalmers.se/en/infrastructure/oso/" target="_blank"><img src="images/oso_logo.png" alt="OSO"></a>
+            <a href="https://www.chalmers.se/en/" target="_blank"><img src="images/chalmers.png" alt="Chalmers"></a>
+            <a href="https://www.iiap.res.in/" target="_blank"><img src="images/iia_logo.png" alt="IIA"></a>
+            <a href="https://hirax.ukzn.ac.za/" target="_blank"><img style="object-fit:contain" src="images/hirax_logo1.png"  alt="HIRAX"></a>
+            <a href="https://www.rri.res.in/" target="_blank"><img style="object-fit:contain" src="images/rri_logo.png"  alt="HIRAX"></a>
+        </div>
+        <footer>
+            <p>&copy; 2025 Mugundhan V.</p>
+        </footer>
+    </main>
 </body>
 </html>
+
